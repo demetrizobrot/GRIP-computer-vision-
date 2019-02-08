@@ -1,0 +1,65 @@
+Feb 06, 2019 10:02:21 AM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [PipelineRunner] Starting
+Feb 06, 2019 10:02:50 AM edu.wpi.grip.core.util.service.LoggingListener terminated
+INFO: [PipelineRunner] Terminated from: STOPPING
+Feb 06, 2019 10:02:50 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': SourceAddedEvent{source=CameraSource{name=Webcam 0}}
+Feb 06, 2019 10:02:50 AM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Feb 06, 2019 10:02:50 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=HSL Threshold}, index=OptionalInt[0]}
+Feb 06, 2019 10:02:50 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Find Contours}, index=OptionalInt[1]}
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Filter Contours}, index=OptionalInt[2]}
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/HSL Threshold/Output, dst=Step/Find Contours/Input}}
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Source/Webcam 0/Image, dst=Step/HSL Threshold/Input}}
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/Find Contours/Contours, dst=Step/Filter Contours/Contours}}
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': edu.wpi.grip.core.events.ProjectSettingsChangedEvent@9674b3a
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': edu.wpi.grip.core.events.CodeGenerationSettingsChangedEvent@20536c1d
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [PipelineRunner] Starting
+Feb 06, 2019 10:02:51 AM edu.wpi.grip.core.Step runPerform
+WARNING: The HSL Threshold operation did not perform correctly.
+java.lang.IllegalArgumentException: HSL Threshold needs a 3-channel input
+	at edu.wpi.grip.core.operations.composite.HSLThresholdOperation.perform(HSLThresholdOperation.java:90)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Feb 06, 2019 10:06:19 AM edu.wpi.grip.core.util.service.LoggingListener terminated
+INFO: [CameraSource] Terminated from: STOPPING
+Feb 06, 2019 10:07:37 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepAddedEvent{step=Step{operation=CV erode}, index=OptionalInt[3]}
+Feb 06, 2019 10:07:51 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionRemovedEvent{connection=Connection{src=Step/HSL Threshold/Output, dst=Step/Find Contours/Input}}
+Feb 06, 2019 10:07:52 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/HSL Threshold/Output, dst=Step/CV erode/src}}
+Feb 06, 2019 10:07:55 AM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/CV erode/dst, dst=Step/Find Contours/Input}}
+Feb 06, 2019 10:11:42 AM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Feb 06, 2019 10:12:20 AM edu.wpi.grip.core.util.service.LoggingListener terminated
+INFO: [CameraSource] Terminated from: STOPPING
+Feb 06, 2019 10:15:11 AM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Feb 06, 2019 10:17:03 AM edu.wpi.grip.core.util.SafeShutdown exit
+INFO: Exiting GRIP
